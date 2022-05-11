@@ -14,7 +14,7 @@ public interface ProdutosRepository extends JpaRepository <Produtos, Long>  {
 	
 	public List <Produtos> findAllByNomeContainingIgnoreCase(@Param("nome")String nome);
 	
-	public List <Produtos>findByPrecoLesseThanOrderByPrecoDes(double preco);
+	public List <Produtos>findByPrecoLessThanOrderByPrecoDesc(double preco);
 	
-	public List <Produtos>findByPrecoGreaterThanOrderByPrecoDes(double preco);
+	public List <Produtos>findByPrecoGreaterThanOrderByPrecoDesc(double preco);
 }

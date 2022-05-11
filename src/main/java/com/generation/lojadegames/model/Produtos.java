@@ -36,7 +36,7 @@ public class Produtos {
 	
 	@NotEmpty(message = "o valor quantido precisa ser digitado")
 	@Positive(message = "O numero tem que ser positivo")
-	private String quantidade;
+	private int quantidade;
 	
 	
 	@NotEmpty(message = "atributo preco precisa ser digitado")
@@ -51,6 +51,18 @@ public class Produtos {
 	@ManyToOne
     @JsonIgnoreProperties("produtos")
     private Categoria categoria;
+	
+	@ManyToOne
+    @JsonIgnoreProperties("produtos")
+    private Usuario usuario;
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public Categoria getCategoria() {
 		return categoria;
@@ -92,11 +104,11 @@ public class Produtos {
 		this.console = console;
 	}
 
-	public String getQuantidade() {
+	public int getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(String quantidade) {
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
 
